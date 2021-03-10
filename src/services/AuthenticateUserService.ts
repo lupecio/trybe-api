@@ -21,7 +21,7 @@ class AuthenticateUserService {
     user.password = password;
 
     const onlyNumber = /^[-+]?[0-9]+$/;
-    if (!email || !onlyNumber.test(user.password) || user.password.length < 6) {
+    if (!email || !onlyNumber.test(user.password) || user.password.length !== 6) {
       throw new AppError('Campos inválidos');
     }
 
